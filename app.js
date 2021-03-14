@@ -36,6 +36,10 @@ app.get("/work", (req, res) => {
     })
 });
 
+app.get("/about", (req, res) =>  {
+    res.render("about");
+})
+
 app.post("/work", (req, res) => {
     let item = req.body.newItem;
     workItems.push(item);
