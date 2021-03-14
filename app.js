@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const ejs = require("ejs");
+const date = require(__dirname + "/date.js");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -11,18 +11,7 @@ let items = ["Buy Food", "Cook food", "Eat Food"];
 let workItems = [];
 
 app.get("/", (req, res) => {
-    let today = new Date();
-    let options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    }
-    let day =  today.toLocaleDateString("en-US", options);
-    // let currentDay = today.getDay();
-    // let day = "";
-    // let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    //
-    // day = currentDay === 6 || currentDay === 0 ? dayNames[currentDay] : dayNames[currentDay];
+    let day = date();
     res.render("list", {
         listTitle: day,
         newListItems: items
