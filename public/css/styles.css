@@ -67,8 +67,8 @@ button {
   background-color: #A683E3;
   color: #fff;
   font-size: 30px;
-  padding-bottom: 6px;
   border-width: 0;
+  text-align: 50px;
 }
 
 input[type="text"] {
